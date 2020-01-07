@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:iconTint="#000000"
+        android:id="@+id/settings_button"
+        android:orderInCategory="300"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings_applications_black_24dp"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/share_button"
+        android:icon="@drawable/ic_share_black_24dp"
+        android:iconTint="#000000"
+        android:orderInCategory="300"
+        android:title="@string/share"
+        app:showAsAction="ifRoom"></item>
+
+
+</menu>
