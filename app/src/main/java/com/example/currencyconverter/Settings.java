@@ -54,15 +54,7 @@ public class Settings extends AppCompatActivity {
         });
 
     }
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            //finish(); // close this activity and return to preview activity (if there is any)
-            Intent intent = new Intent(Settings.this, MainActivity.class);
-            startActivity(intent);
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 
     public void setLocale(final String language) {
         Locale myLocale = new Locale(language);
@@ -74,9 +66,9 @@ public class Settings extends AppCompatActivity {
 
         chosenLang = findViewById(R.id.languageTextView);
         if(chosenLang.getText().equals("Language")) {
-            chosenLang.setText("Uygulama dili:");
+            chosenLang.setText("Uygulama dilini seçiniz:");
         } else {
-            chosenLang.setText("App language:");
+            chosenLang.setText("Choose app language:");
         }
         Snackbar snackbar = Snackbar.make(findViewById(R.id.settings_constraint_layout), getString(R.string.languageChanged), Snackbar.LENGTH_LONG);
         snackbar.setAction("CANCEL", new View.OnClickListener() {
@@ -94,5 +86,14 @@ public class Settings extends AppCompatActivity {
         snackbar.show();
 
         intent.putExtra(MainActivity.LANGUAGE, language);
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            //finish(); // close this activity and return to preview activity (if there is any)
+
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

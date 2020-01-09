@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">ConvertIT</string>
+    <string name="share">Paylaş</string>
+    <string name="settings">Ayarlar</string>
+    <string name="more"></string>
+    <string name="email">Email</string>
+    <string name="password">Şifre</string>
+    <string name="confirmPassword">Şifreyi Onayla</string>
+    <string name="signIn">GİRİŞ YAP</string>
+    <string name="signUp">KAYIT OL</string>
+    <string name="register">KAYIT OL</string>
+    <string name="back">GERİ</string>
+    <string name="favorites">Favoriler</string>
+    <string name="converter">Çevirici</string>
+    <string name="profile">Profil</string>
+    <string name="login">GİRİŞ</string>
+    <string name="loginPage">GİRİŞ SAYFASI</string>
+    <string name="amount">İlk Döviz Miktarı:</string>
+    <string name="result">Sonuç :</string>
+    <string name="convertTo">ÇEVİRİLECEK DÖVİZ</string>
+    <string name="convertFrom">SONUÇ OLACAK DÖVİZ</string>
+    <string name="convert">HESAPLA</string>
+    <string name="title_activity_settings">Ayarlar</string>
+    <string name="Language">Dil</string>
+    <string name="loggedout">Başarıyla çıkış yapıldı!</string>
+    <string name="loggedin">Başarıyla giriş yapıldı!</string>
+    <string name="welcomeText">ConvertIT uygulamasına hoşgeldiniz!</string>
+    <string name="please">Lütfen üye girişi yapınız!</string>
+    <string name="language">Uygulama Dilini Seçiniz:</string>
+    <string name="cancel">Değişim iptal edildi</string>
+    <string name="languageChanged">Değişim gerçekleşti</string>
+    <string name="favoritesbutton">Favori listesine geri dönmek için yandaki butona basabilirsiniz.</string>
+    <string name="newcurrency">Tüm dövizlerin listesinden, favori listenize yeni kur eklemek için döviz simgesine basabilirsiniz.</string>
+    <string name="welcomeText1">ConvertITye hoşgeldiniz Sevgili: <br /> </string>
+    <string name="welcomeText2"><br /> . Çıkış yapmak için güç simgesine basabilirsiniz.</string>
+    <string name="pleaseLogin">Üyeyseniz lütfen giriş yapınız,
+ üye değilseniz güç düğmesine tıklayarak kayıt olabilirsiniz.</string>
+    <string name="selected"> seçildi</string>
+    <string name="equals">eşittir</string>
+    <string name="permissionNeeded">İzin gerekli</string>
+    <string name="neededBecause">Database bağlanmak için izin gereklidir.</string>
+    <string name="granted">İzin verildi</string>
+    <string name="denied">İzin reddedildi</string>
+    <string name="alreadyGranted">Zaten internet izin verilmiş!</string>
+    <string name="appLanguage">Uygulama dilini seçiniz:</string>
+    <string name="deletedItem">Obje başarıyla favori listesinden silindi!</string>
+    <string name="downloading">Favori listesi yükleniyor...</string>
+    <string name="crash">Veritabanı çalışamadı, lütfen tekrar deneyiniz.</string>
+
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Mesajlar</string>
+    <string name="sync_header" translatable="false">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">İmzanız</string>
+    <string name="reply_title">Hazır cevap aksiyonu</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+
+</resources>

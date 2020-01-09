@@ -1,7 +1,6 @@
 package com.example.currencyconverter;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -22,7 +20,8 @@ public class login_page extends AppCompatActivity {
     EditText e1,e2;
     Button b1,b2;
     DatabaseHelper db;
-    private int INTERNET_PERMISSION_CODE = 1;
+    private int PERMISSION_CODE = 1;
+    private static final int STORAGE_PERMISSION_CODE = 101;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +48,16 @@ public class login_page extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("name", MODE_PRIVATE);
                 boolean isLoggedIn= prefs.getBoolean("isLoggedIn", false);
 
-                if (ContextCompat.checkSelfPermission(login_page.this,
-                        Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_GRANTED) {
+                /*if (ContextCompat.checkSelfPermission(login_page.this,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(login_page.this, R.string.alreadyGranted,
                             Toast.LENGTH_SHORT).show();
                 } else {
                     requestStoragePermission();
-                }
+                }*/
+                checkPermission(
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        STORAGE_PERMISSION_CODE);
 
                 if(isLoggedIn){
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -83,9 +85,59 @@ public class login_page extends AppCompatActivity {
         });
     }
 
+    // Function to check and request permission.
+    public void checkPermission(String permission, int requestCode)
+    {
+        if (ContextCompat.checkSelfPermission(login_page.this, permission)
+                == PackageManager.PERMISSION_DENIED) {
+
+            // Requesting the permission
+            ActivityCompat.requestPermissions(login_page.this,
+                    new String[] { permission },
+                    requestCode);
+        }
+        else {
+            Toast.makeText(login_page.this,
+                    "Permission already granted",
+                    Toast.LENGTH_SHORT)
+                    .show();
+        }
+    }
+
+    // This function is called when the user accepts or decline the permission.
+    // Request Code is used to check which permission called this function.
+    // This request code is provided when the user is prompt for permission.
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String[] permissions,
+                                           @NonNull int[] grantResults)
+    {
+        super
+                .onRequestPermissionsResult(requestCode,
+                        permissions,
+                        grantResults);
+
+        if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(login_page.this,
+                        "Storage Permission Granted",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+            else {
+                Toast.makeText(login_page.this,
+                        "Storage Permission Denied",
+                        Toast.LENGTH_SHORT)
+                        .show();
+            }
+        }
+    }
+/*
     private void requestStoragePermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.ACCESS_NETWORK_STATE)) {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 
             new AlertDialog.Builder(this)
                     .setTitle(R.string.permissionNeeded)
@@ -94,7 +146,7 @@ public class login_page extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             ActivityCompat.requestPermissions(login_page.this,
-                                    new String[] {Manifest.permission.ACCESS_NETWORK_STATE}, INTERNET_PERMISSION_CODE);
+                                    new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_CODE);
                         }
                     })
                     .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -107,18 +159,18 @@ public class login_page extends AppCompatActivity {
 
         } else {
             ActivityCompat.requestPermissions(this,
-                    new String[] {Manifest.permission.ACCESS_NETWORK_STATE}, INTERNET_PERMISSION_CODE);
+                    new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_CODE);
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if (requestCode == INTERNET_PERMISSION_CODE)  {
+        if (requestCode == PERMISSION_CODE)  {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, R.string.granted, Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(this, R.string.denied, Toast.LENGTH_SHORT).show();
             }
         }
-    }
+    }*/
 }

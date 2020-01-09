@@ -80,7 +80,7 @@ public class CurrencyActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case 121:
                 addItem(item.getGroupId());
-
+                //adapter.removeItem(item.getGroupId());
                 displayMessage("Item added to favorites list!");
                 //tik simgesi koy
                 return true;
@@ -97,6 +97,8 @@ public class CurrencyActivity extends AppCompatActivity {
         dH.insertFavCurrency(products.get(position).getCurrencyName(),products.get(position).getImageId(),products.get(position).getCurrencyRates());
         //Toast.makeText(getActivity().getBaseContext(), "Item added", Toast.LENGTH_LONG).show();
     }
+
+
 
     private void displayMessage(String message){
         Toast.makeText(CurrencyActivity.this,message,Toast.LENGTH_LONG).show();

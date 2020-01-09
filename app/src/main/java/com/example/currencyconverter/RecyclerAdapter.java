@@ -83,7 +83,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PostHo
             if (v == deleteproduct) {
                 //deleteProduct(getLayoutPosition());
             }
-
         }*/
 
         @Override

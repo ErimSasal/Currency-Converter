@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "Login.db",null,2);
+        super(context, "Login.db",null,4);
     }
 
     @Override

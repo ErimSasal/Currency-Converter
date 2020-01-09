@@ -1,64 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">ConvertIT</string>
-    <string name="share">Paylaş</string>
-    <string name="settings">Ayarlar</string>
+    <string name="share">Share</string>
+    <string name="settings">Settings</string>
     <string name="more"></string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="email">Email</string>
-    <string name="password">Şifre</string>
-    <string name="confirmPassword">Şifreyi Onayla</string>
-    <string name="signIn">GİRİŞ YAP</string>
-    <string name="signUp">KAYIT OL</string>
-    <string name="register">KAYIT OL</string>
-    <string name="back">GERİ</string>
-    <string name="favorites">Favoriler</string>
-    <string name="converter">Çevirici</string>
-    <string name="profile">Profil</string>
-    <string name="login">GİRİŞ</string>
-    <string name="loginPage">GİRİŞ SAYFASI</string>
-    <string name="amount">İlk Döviz Miktarı:</string>
-    <string name="result">Sonuç :</string>
-    <string name="convertTo">ÇEVİRİLECEK DÖVİZ</string>
-    <string name="convertFrom">SONUÇ OLACAK DÖVİZ</string>
-    <string name="convert">HESAPLA</string>
-    <string name="title_activity_settings">Ayarlar</string>
-    <string name="Language">Dil</string>
-    <string name="loggedout">Başarıyla çıkış yapıldı!</string>
-    <string name="loggedin">Başarıyla giriş yapıldı!</string>
-    <string name="welcomeText">ConvertIT uygulamasına hoşgeldiniz!</string>
-    <string name="please">Lütfen üye girişi yapınız!</string>
-    <string name="language">Uygulama Dilini Seçiniz:</string>
-    <string name="cancel">Değişim iptal edildi</string>
-    <string name="languageChanged">Değişim gerçekleşti</string>
-    <string name="favoritesbutton">Favori listesine geri dönmek için yandaki butona basabilirsiniz.</string>
-    <string name="newcurrency">Tüm dövizlerin listesinden, favori listenize yeni kur eklemek için döviz simgesine basabilirsiniz.</string>
-    <string name="welcomeText1">ConvertITye hoşgeldiniz
-        Sevgili </string>
+    <string name="password">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="signIn">SIGN IN</string>
+    <string name="signUp">SIGN UP</string>
+    <string name="register">REGISTER</string>
+    <string name="back">BACK</string>
+    <string name="favorites">Favorites</string>
+    <string name="converter">Converter</string>
+    <string name="profile">Profile</string>
+    <string name="getRates" translatable="false">GET RATES</string>
+    <string name="login">LOGIN</string>
+    <string name="loginPage">LOGIN PAGE</string>
+    <string name="amount">Amount of Base Currency:</string>
+    <string name="result">Result :</string>
+    <string name="convertTo">CONVERT TO</string>
+    <string name="convertFrom">CONVERT FROM:</string>
+    <string name="convert">CONVERT</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="Language">Language</string>
+    <string name="loggedout">Successfully Logged Out!</string>
+    <string name="loggedin">Successfully Logged In!</string>
+    <string name="welcomeText">Welcome to the ConvertIT </string>
+    <string name="please">Please login to see preferences!</string>
+    <string name="language">Choose Language:</string>
+    <string name="cancel">Changing was cancelled</string>
+    <string name="languageChanged">Language change was set</string>
+    <string name="favoritesbutton">You can click to this button for going back favorites list.</string>
+    <string name="newcurrency">To add new currency to your favorites list, you can click the currencies button.</string>
+    <string name="welcomeText1">Welcome to the ConvertIT\nDear </string>
     <string name="welcomeText2">
-        Çıkış yapmak için güç simgesine basabilirsiniz.</string>
-    <string name="pleaseLogin">Üyeyseniz lütfen giriş yapınız,
- üye değilseniz güç düğmesine tıklayarak kayıt olabilirsiniz.</string>
-    <string name="selected"> seçildi</string>
-<string name="equals">eşittir</string>
-    <string name="permissionNeeded">İzin gerekli</string>
-    <string name="neededBecause">Database bağlanmak için izin gereklidir.</string>
-    <string name="granted">İzin verildi</string>
-    <string name="denied">İzin reddedildi</string>
-    <string name="alreadyGranted">Zaten internet izin verilmiş!</string>
+            If you wish to log out,You can click to the power button!</string>
+    <string name="pleaseLogin">Please login if you have registered,
+            you can click to the power button to login or register!</string>
+    <string name="selected"> selected</string>
+    <string name="equals">equals</string>
+    <string name="permissionNeeded">Permission needed</string>
+    <string name="neededBecause">This permission is needed because of to use database</string>
+    <string name="granted">Permission GRANTED</string>
+    <string name="denied">Permission DENIED</string>
+    <string name="alreadyGranted">You have already granted this permission!</string>
+    <string name="appLanguage">Choose app language:</string>
+    <string name="deletedItem">Item deleted from favorites list!</string>
+    <string name="downloading">Downloading favorites list...</string>
+    <string name="crash">Database is crashed</string>
 
 
     <!-- Preference Titles -->
-    <string name="messages_header">Mesajlar</string>
-    <string name="sync_header" translatable="false">Sync</string>
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">İmzanız</string>
-    <string name="reply_title">Hazır cevap aksiyonu</string>
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title" translatable="false">Sync email periodically</string>
-    <string name="attachment_title" translatable="false">Download incoming attachments</string>
-    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
-    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>
+

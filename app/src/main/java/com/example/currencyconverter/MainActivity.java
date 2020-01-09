@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnav);
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        loadFrag(new converter_page());
+        loadFrag(new favorites_page());
     }
 
     public static Context getContextOfApplication(){
@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment selectedFragment = null;
             switch (item.getItemId()) {
-                case R.id.converter:
-                    selectedFragment = new converter_page();
-                    break;
                 case R.id.favorites:
                     selectedFragment = new favorites_page();
+                    break;
+                case R.id.converter:
+                    selectedFragment = new converter_page();
                     break;
                 case R.id.profile:
                     selectedFragment = new profile_page();

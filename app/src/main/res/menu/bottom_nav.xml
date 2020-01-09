@@ -2,20 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/converter"
-
-        android:title="Converter">
-    </item>
-
-    <item
         android:id="@+id/favorites"
 
-        android:title="Favorites">
+        android:title="@string/favorites">
+    </item>
+    <item
+        android:id="@+id/converter"
+
+        android:title="@string/converter">
     </item>
 
     <item
         android:id="@+id/profile"
 
-        android:title="Profile">
+        android:title="@string/profile">
     </item>
 </menu>

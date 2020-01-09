@@ -84,17 +84,17 @@ public class AdapterRecycler2 extends RecyclerView.Adapter<AdapterRecycler2.Post
             menu.setHeaderTitle("Select an Option");
             menu.add(this.getAdapterPosition(),121,0,"Add to favorites list");
 
-
         }
 
-        public ImageView getChecked(){return checked;}
+
 
     }
 
 
-    public void addItem(int position){
-        favNames.add(aProductList.get(position).getCurrencyName());
-        favImgs.add(aProductList.get(position).getImageId());
+
+    public void removeItem(int position){
+
+        aProductList.remove(position);
         notifyDataSetChanged();
     }
 

@@ -1,8 +1,13 @@
 package com.example.currencyconverter;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +42,7 @@ public class favorites_page extends Fragment {
     RecyclerView recyclerView;
     RecyclerAdapter adapter;
     AdapterRecycler2 adapter2;
-    ImageButton b1,b2;
+    ImageButton buttonCurrencies,buttonRefresh;
     DatabaseHelper dH;
     ImageView checked;
 
@@ -64,23 +69,19 @@ public class favorites_page extends Fragment {
         toolbarFav.setTitleTextColor(0xFFFFFFFF);
         toolbarFav.setSubtitleTextColor(Color.WHITE);
 
-        b1 = view.findViewById(R.id.currenciesListButton);
-        b1.setOnClickListener(new View.OnClickListener() {
+        buttonCurrencies = view.findViewById(R.id.currenciesListButton);
+        buttonCurrencies.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity().getBaseContext(), CurrencyActivity.class);
                 startActivity(intent);
             }
         });
-        b2 = view.findViewById(R.id.refresh);
-        b2.setOnClickListener(new View.OnClickListener() {
+        buttonRefresh = view.findViewById(R.id.refresh);
+        buttonRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pro = dH.getAllCurrencyData();
-                if(pro.size()>0 || pro.size()<169) {
-                    adapter = new RecyclerAdapter(pro);
-                    recyclerView.setAdapter(adapter);
-                }
+                getActivity().recreate();
             }
         });
 
@@ -136,7 +137,7 @@ public class favorites_page extends Fragment {
                 }
 
 
-                displayMessage("Item deleted from favorites list!");
+                displayMessage(getString(R.string.deletedItem));
                 return true;
             default:
                 return super.onContextItemSelected(item);
@@ -157,6 +158,40 @@ public class favorites_page extends Fragment {
 
     private void displayMessage(String message){
         Toast.makeText(getActivity(),message,Toast.LENGTH_LONG).show();
+    }
+
+    private class asyncTask extends AsyncTask<Void, Void, Boolean> {
+        ProgressDialog dialog;
+
+        protected void onPreExecute() {
+            dialog = new ProgressDialog(getActivity());
+            dialog.setMessage(getString(R.string.downloading));
+            dialog.setIndeterminate(true);
+            dialog.setCancelable(false);
+            dialog.show();
+        }
+
+        protected Boolean doInBackground(Void... voids) {
+            SQLiteOpenHelper dH = new DatabaseHelper(getActivity());
+            SQLiteDatabase db = dH.getWritableDatabase();
+            try {
+                db.rawQuery( "select * from favorite", null);
+                db.close();
+                return true;
+            } catch (SQLiteException e) {
+                return false;
+            }
+        }
+
+        protected void onPostExecute(Boolean success) {
+            if (!success) {
+                Toast toast = Toast.makeText(getActivity(),
+                        getString(R.string.crash), Toast.LENGTH_SHORT);
+                toast.show();
+            } else {
+                dialog.dismiss();
+            }
+        }
     }
 
 
