@@ -1,6 +1,7 @@
 package com.example.currencyconverter;
 
 import android.Manifest;
+import android.app.Notification;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -13,7 +14,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
+
+import static com.example.currencyconverter.App.CHANNEL_1_ID;
 
 public class login_page extends AppCompatActivity {
 
@@ -22,12 +27,17 @@ public class login_page extends AppCompatActivity {
     DatabaseHelper db;
     private int PERMISSION_CODE = 1;
     private static final int STORAGE_PERMISSION_CODE = 101;
+    private NotificationManagerCompat notificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
+        checkPermission(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                STORAGE_PERMISSION_CODE);
+        notificationManager = NotificationManagerCompat.from(this);
         db = new DatabaseHelper(this);
         e1 = findViewById(R.id.emailText);
         e2 = findViewById(R.id.passwordText);
@@ -55,12 +65,11 @@ public class login_page extends AppCompatActivity {
                 } else {
                     requestStoragePermission();
                 }*/
-                checkPermission(
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                        STORAGE_PERMISSION_CODE);
+
 
                 if(isLoggedIn){
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
                     Toast.makeText(getApplicationContext(), "Successfully Logged In!", Toast.LENGTH_SHORT).show();
                     setContentView(R.layout.activity_main);
                             finish();
@@ -76,13 +85,29 @@ public class login_page extends AppCompatActivity {
             }
         });
 
-        b2.setOnClickListener(new View.OnClickListener() {
+        /*b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(login_page.this,register_activity.class);
-                startActivity(i);
+                sendOnChannel1(v);
+
             }
-        });
+        });*/
+    }
+
+    public void sendOnChannel(View v) {
+        String title = "ConvertIT";
+        String message = "Login process was finished!";
+
+        Notification notification = new NotificationCompat.Builder( this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_looks_one_black_24dp)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManager.notify(0, notification);
+        Intent i = new Intent(login_page.this,register_activity.class);
+        startActivity(i);
     }
 
     // Function to check and request permission.

@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
-
 public class profile_page extends Fragment {
 
 
@@ -24,12 +23,15 @@ public class profile_page extends Fragment {
         // Required empty public constructor
     }
 
+
     TextView pleaseText, welcomeText;
     ImageButton logOutB;
+    String userEmail = "NoUser";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile_page, container, false);
+
 
         Toolbar toolbarProfile = view.findViewById(R.id.fToolbar);
         toolbarProfile.setTitle("ConvertIT");
@@ -42,7 +44,7 @@ public class profile_page extends Fragment {
 
         welcomeText = view.findViewById(R.id.welcomeText);
         try {
-            String userEmail = dH.getAllEmailData().get(0).getEmail();
+            userEmail = dH.getAllEmailData().get(0).getEmail();
             welcomeText.setText(getString(R.string.welcomeText1) + userEmail + getString(R.string.welcomeText2));
         }catch (IndexOutOfBoundsException e){
             welcomeText.setText(getString(R.string.pleaseLogin));
@@ -56,6 +58,7 @@ public class profile_page extends Fragment {
         logOutB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                     //user logging out
                     SharedPreferences.Editor editor = getActivity().getSharedPreferences("name", Context.MODE_PRIVATE).edit();
                     editor.putString("password", "");

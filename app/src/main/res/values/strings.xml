@@ -32,7 +32,7 @@
     <string name="language">Choose Language:</string>
     <string name="cancel">Changing was cancelled</string>
     <string name="languageChanged">Language change was set</string>
-    <string name="favoritesbutton">You can click to this button for going back favorites list.</string>
+    <string name="favoritesbutton">You can press long hold to currency that you want to add your favorites list. You can click to this button for going back favorites list.</string>
     <string name="newcurrency">To add new currency to your favorites list, you can click the currencies button.</string>
     <string name="welcomeText1">Welcome to the ConvertIT\nDear </string>
     <string name="welcomeText2">
@@ -40,7 +40,7 @@
     <string name="pleaseLogin">Please login if you have registered,
             you can click to the power button to login or register!</string>
     <string name="selected"> selected</string>
-    <string name="equals">equals</string>
+    <string name="equals">  equals</string>
     <string name="permissionNeeded">Permission needed</string>
     <string name="neededBecause">This permission is needed because of to use database</string>
     <string name="granted">Permission GRANTED</string>

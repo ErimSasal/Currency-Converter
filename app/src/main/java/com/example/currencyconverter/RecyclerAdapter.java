@@ -87,8 +87,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.PostHo
 
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.setHeaderTitle("Select an Option");
-            menu.add(this.getAdapterPosition(),122,0,"Delete this item");
+
 
 
 

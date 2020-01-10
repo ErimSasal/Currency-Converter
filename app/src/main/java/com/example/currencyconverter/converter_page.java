@@ -122,7 +122,7 @@ public class converter_page extends Fragment {
                 input = Float.valueOf(amountEditText.getText().toString());
                 result = (toRate / fromRate)*input;
                 float resultResult = (float)result;
-                resultText.setText(" " +input + "  " +fromCurrencyName + getString(R.string.equals) +" \n" +resultResult + " " +toCurrencyName);
+                resultText.setText(" " +input + " " +fromCurrencyName + "  " + getString(R.string.equals) +" \n" +resultResult + " " +toCurrencyName);
             }
         });
 

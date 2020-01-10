@@ -125,27 +125,11 @@ public class favorites_page extends Fragment {
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
-            case 122:
-                dH = new DatabaseHelper(getActivity().getApplicationContext());
-                try {
-                    pro = dH.getAllCurrencyData();
-                    dH.deleteCurrencyData(pro.get(item.getItemId()).getCurrencyName(),pro.get(item.getItemId()).getImageId(),pro.get(item.getItemId()).getCurrencyRates());
-                    adapter.removeItem(item.getItemId());
-                }catch (IndexOutOfBoundsException e){
 
-                }
-
-
-                displayMessage(getString(R.string.deletedItem));
-                return true;
-            default:
                 return super.onContextItemSelected(item);
 
         }
 
-
-    }
 
     public void deleteItem(int position){
         dH = new DatabaseHelper(getActivity().getApplicationContext());

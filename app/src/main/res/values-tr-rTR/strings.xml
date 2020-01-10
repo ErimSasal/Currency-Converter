@@ -30,14 +30,14 @@
     <string name="language">Uygulama Dilini Seçiniz:</string>
     <string name="cancel">Değişim iptal edildi</string>
     <string name="languageChanged">Değişim gerçekleşti</string>
-    <string name="favoritesbutton">Favori listesine geri dönmek için yandaki butona basabilirsiniz.</string>
+    <string name="favoritesbutton">Favori listsine eklemek istediğiniz dövizin üstüne basılı tutup, ekleme işlemini gerçekleştirebilirsiniz. Favori listesine geri dönmek için yandaki favori butonuna basabilirsiniz.</string>
     <string name="newcurrency">Tüm dövizlerin listesinden, favori listenize yeni kur eklemek için döviz simgesine basabilirsiniz.</string>
     <string name="welcomeText1">ConvertITye hoşgeldiniz Sevgili: <br /> </string>
     <string name="welcomeText2"><br /> . Çıkış yapmak için güç simgesine basabilirsiniz.</string>
     <string name="pleaseLogin">Üyeyseniz lütfen giriş yapınız,
  üye değilseniz güç düğmesine tıklayarak kayıt olabilirsiniz.</string>
     <string name="selected"> seçildi</string>
-    <string name="equals">eşittir</string>
+    <string name="equals">  eşittir</string>
     <string name="permissionNeeded">İzin gerekli</string>
     <string name="neededBecause">Database bağlanmak için izin gereklidir.</string>
     <string name="granted">İzin verildi</string>
